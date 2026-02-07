@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-bg: #1a1a1a;
@@ -14,13 +16,21 @@
             --gold: #f1c40f;
         }
         body {
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            /* 使用思源黑體 */
+            font-family: 'Noto Sans TC', sans-serif;
             background-color: var(--primary-bg);
             color: var(--text-main);
             line-height: 1.8;
             margin: 0;
             padding: 20px;
         }
+
+        /* 翻譯按鈕容器 */
+        #google_translate_element {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -29,6 +39,15 @@
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
+
+        /* 提示可以編輯的小標籤 */
+        .edit-hint {
+            font-size: 0.7em;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         h1 { font-size: 2.2em; margin-bottom: 5px; color: var(--accent-blue); }
         .alias { font-size: 1em; color: #aaa; margin-bottom: 10px; }
         .hr-line { border-bottom: 1px solid #444; margin: 25px 0; }
@@ -42,10 +61,6 @@
             font-weight: bold;
         }
 
-        .content-block { margin-bottom: 30px; }
-        ul, ol { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-
         .warning-section {
             background: rgba(255, 94, 94, 0.03);
             border: 1px solid #444;
@@ -53,130 +68,85 @@
             border-radius: 10px;
         }
         .warning-item { margin-bottom: 15px; border-bottom: 1px solid #3d3d3d; padding-bottom: 10px; }
-        .warning-item:last-child { border: none; }
+        
+        /* 讓可編輯區域點擊時有藍色邊框 */
+        [contenteditable="true"]:focus {
+            outline: 2px solid var(--accent-blue);
+            padding: 5px;
+            border-radius: 5px;
+        }
 
         footer { text-align: center; margin-top: 50px; color: #666; font-size: 0.8em; }
-        
-        /* 畫廊預留空間 */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .gallery-item {
-            aspect-ratio: 1/1;
-            background: #3d3d3d;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            border: 1px dashed #555;
-        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>我是6毛，也可以叫我Umo</h1>
-    <div class="alias">別名：毛毛毛毛毛毛，毛⁶</div>
-    <div class="alias">生日：11/22</div>
-    <div class="alias">MBTI：istp（？）</div>
+    <div id="google_translate_element"></div>
 
-    <div class="hr-line"></div>
-
-    <div class="content-block">
-        <p><strong>喜歡的角色：</strong>伊凡、蒂爾、多閒、秦限王億、琇亞、朱赫、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓</p>
-        <p><strong>喜歡的ship：</strong>ivti、程光、秦億（秦王）</p>
-        <p><strong>推角：</strong>蒂爾、王億、陸光</p>
-        <p><strong>漫畫：</strong>alienstage 、你是我的全世界、惡人想要搶救一下</p>
-        <p><strong>動畫：</strong>時光代理人、現在是哪一個多閒</p>
-    </div>
-
-    <div class="hr-line"></div>
-
-    <div class="content-block">
-        <p><strong>喜歡的食物：</strong>阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西</p>
-        <p><strong>討厭的食物：</strong>苦瓜、太辣的東西、蠢蛋、太甜或太鹹</p>
-        <p><strong>嗜好：</strong>跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語</p>
-    </div>
-
-    <div class="hr-line"></div>
-
-    <div class="section-title">地雷</div>
-    <div class="warning-section">
-        <div class="warning-item">*請別跟我談政治的東西。</div>
+    <div class="container">
+        <p class="edit-hint">(提示：這份自介的所有文字都可以直接點擊編輯，修改完後請記得複製程式碼存檔)</p>
         
-        <div class="warning-item">
-            *我不喜歡對家。<br>
-            請你刷掉我。<br>
-            例如：tiiv、光時（白黑）
+        <div contenteditable="true">
+            <h1>我是6毛，也可以叫我Umo</h1>
+            <div class="alias">別名：毛毛毛毛毛毛，毛⁶</div>
+            <div class="alias">生日：11/22</div>
+            <div class="alias">MBTI：istp（？）</div>
+
+            <div class="hr-line"></div>
+
+            <div class="content-block">
+                <p><strong>喜歡的角色：</strong>伊凡、蒂爾、多閒、秦限王億、琇亞、朱赫、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓</p>
+                <p><strong>喜歡的ship：</strong>ivti、程光、秦億（秦王）</p>
+                <p><strong>推角：</strong>蒂爾、王億、陸光</p>
+                <p><strong>漫畫：</strong>alienstage 、你是我的全世界、惡人想要搶救一下</p>
+                <p><strong>動畫：</strong>時光代理人、現在是哪一個多閒</p>
+            </div>
+
+            <div class="hr-line"></div>
+
+            <div class="content-block">
+                <p><strong>喜歡的食物：</strong>阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西</p>
+                <p><strong>討厭的食物：</strong>苦瓜、太辣的東西、蠢蛋、太甜或太鹹</p>
+                <p><strong>嗜好：</strong>跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語</p>
+            </div>
+
+            <div class="hr-line"></div>
+
+            <div class="section-title">地雷</div>
+            <div class="warning-section">
+                <div class="warning-item">*請別跟我談政治的東西。</div>
+                <div class="warning-item">*我不喜歡對家。請你刷掉我。 例如：tiiv、光時（白黑）</div>
+                <div class="warning-item">*雖然我的畫沒那麼好看，但請不要轉載和抄襲，我看到了我會砲轟你。</div>
+                <div class="warning-item">*我的心理承受能力出奇的差，特別容易破防，所以假設你覺得我的畫很奇怪，請你建議我如何修改。請不要罵我。</div>
+                <div class="warning-item">*我不會拿AI的畫說是自己的。</div>
+                <div class="warning-item">*請不要無根無據的指控、造謠我沒做過的事情。</div>
+                <div class="warning-item">*請以友善的語氣和我說話。</div>
+                <div class="warning-item">*請不要對我乞求無償服務，除非你是我的超級好朋友。</div>
+            </div>
+
+            <div class="section-title" style="color: var(--gold);">我的願望</div>
+            <ol>
+                <li>學會英文、韓文、日文</li>
+                <li>畫出美麗的車圖</li>
+                <li>做出一個一分鐘以上的動畫</li>
+                <li>做出完整的小說</li>
+                <li>做出想要的軟體</li>
+                <li>每天洗澡</li>
+            </ol>
         </div>
 
-        <div class="warning-item">
-            *雖然我的畫沒那麼好看，但請不要轉載和抄襲，我看到了我會砲轟你。<br>
-            基本上各個社群媒體我都有，我自己就可以發圖，不需要別人。<br>
-            但是你可以拿我的圖去剪片。我會很開心，記得要@我。
-        </div>
-
-        <div class="warning-item">
-            *我永遠都不是種族歧視者。我愛任何膚色、善良的帥哥美女。<br>
-            -膚色會因為環境光的不同而有差異。
-        </div>
-
-        <div class="warning-item">
-            *我的心理承受能力出奇的差，特別容易破防，<br>
-            所以假設你覺得我的畫很奇怪，請你建議我如何修改。<br>
-            合理的話，我會好好聽從意見，<br>
-            請不要罵我。
-        </div>
-
-        <div class="warning-item">
-            *我不會拿AI的畫說是自己的。我全部的畫作都是自己創作，假設你質疑我，我會直接封鎖。<br>
-            （雖然有些地方可能有點像，但那只是我偷懶沒畫而已。）
-        </div>
-
-        <div class="warning-item">
-            *請不要無根無據的指控、造謠我沒做過的事情，遇到這種人我也不多說，會直接封鎖，我就沒做這件事，不用解釋。
-        </div>
-
-        <div class="warning-item">
-            *請以友善的語氣和我說話，假設你直接一開始就使用責備的語氣和我說話，我會先罵你一口或直接封鎖。
-        </div>
-
-        <div class="warning-item">
-            *請不要對我乞求無償服務，除非你是我的超級好朋友。
-        </div>
-
-        <div class="warning-item">
-            *你不喜歡我的畫作，就請你刷掉我或是封鎖我，不要引用或是在我的貼文留言攻擊我。
-        </div>
+        <footer>
+            &copy; 2026 Umo 6毛. All rights reserved.<br>
+            「要進入照片委託了嗎？程小時。」
+        </footer>
     </div>
 
-    <div class="section-title" style="color: var(--gold);">我的願望</div>
-    <ol>
-        <li>學會英文、韓文、日文</li>
-        <li>畫出美麗的車圖</li>
-        <li>做出一個一分鐘以上的動畫</li>
-        <li>做出完整的小說</li>
-        <li>做出想要的軟體</li>
-        <li>每天洗澡</li>
-    </ol>
-
-    <div class="section-title">作品展示區 (預留)</div>
-    <div class="gallery">
-        <div class="gallery-item">作品 1</div>
-        <div class="gallery-item">作品 2</div>
-        <div class="gallery-item">作品 3</div>
-        <div class="gallery-item">作品 4</div>
-    </div>
-
-    <footer>
-        &copy; 2026 Umo 6毛. All rights reserved.<br>
-        「要進入照片委託了嗎？程小時。」
-    </footer>
-</div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'zh-TW'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
