@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 引入內海字體 NaikaiFont */
+        /* 強制從 jsDelivr 載入內海字體 NaikaiFont */
         @font-face {
             font-family: 'NaikaiFont';
             src: url('https://cdn.jsdelivr.net/gh/max32002/naikaifont@master/webfont/NaikaiFont-Regular.woff2') format('woff2');
@@ -20,8 +20,8 @@
             background-repeat: no-repeat;
             background-color: #1a1a1a;
             
-            /* 強制套用內海字體 */
-            font-family: 'NaikaiFont', sans-serif !important;
+            /* 強制指定字體，並加入預備手寫字體 */
+            font-family: 'NaikaiFont', 'SetoFont', 'Microsoft JhengHei', cursive, sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
@@ -38,12 +38,18 @@
             backdrop-filter: blur(5px);
         }
 
-        /* 名字標題顏色 #ffa9a9 */
-        h1 { font-size: 2.2em; margin-bottom: 5px; color: #ffa9a9 !important; font-weight: 700; }
+        /* 頂部名字標題顏色 #ffa9a9 */
+        h1 { 
+            font-size: 2.2em; 
+            margin-bottom: 5px; 
+            color: #ffa9a9 !important; 
+            font-weight: 700; 
+            font-family: 'NaikaiFont', sans-serif !important;
+        }
         
         #google_translate_element { margin: 15px 0 25px 0; }
         
-        /* 一般小節標題 */
+        /* 一般小節標題 (粉色) */
         .section-title {
             border-left: 4px solid #ffa9a9;
             padding-left: 15px;
@@ -53,11 +59,21 @@
             font-weight: 700;
         }
 
-        /* 內容區塊：保持原稿排版、空格與換行 */
+        /* 地雷標題強制變紅 */
+        .red-title {
+            border-left: 4px solid #ff0000 !important;
+            padding-left: 15px;
+            margin: 35px 0 15px;
+            font-size: 1.3em;
+            color: #ff0000 !important;
+            font-weight: 700;
+        }
+
         .raw-content {
             white-space: pre-wrap;
             word-wrap: break-word;
             margin-bottom: 25px;
+            font-family: 'NaikaiFont', sans-serif !important;
         }
 
         footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; }
@@ -78,7 +94,7 @@
 
     <div class="section-title">作品展示區 (預留)</div>
     <div style="background: rgba(0,0,0,0.2); height: 100px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666; border: 1px dashed #555; margin-bottom: 20px;">
-        預留位置 (上傳圖片至 GitHub 後可用 img 標籤加入)
+        預留位置
     </div>
 
     <div class="raw-content">別名：毛毛毛毛毛毛，毛⁶
@@ -106,7 +122,7 @@ ______________
 嗜好：跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語
 _______________</div>
 
-    <div class="section-title" style="color: #ff0000 !important; border-left-color: #ff0000 !important;">地雷：</div>
+    <div class="red-title">地雷：</div>
     <div class="raw-content">*請別跟我談政治的東西。
 
 *我不喜歡對家。
@@ -115,7 +131,7 @@ _______________</div>
 
 *雖然我的畫沒那麼好看，但請不要轉載和抄襲，我看到了我會砲轟你。
 基本上各個社群媒體我都有，我自己就可以發圖，不需要別人。
-但是你可以拿我的圖去剪片。我會會很開心，記得要@我。
+但是你可以拿我的圖去剪片。我會很開心，記得要@我。
 
 *不要對我人身攻擊。
 
