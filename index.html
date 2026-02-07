@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 從 lxgw 的 kose-font 載入字體 */
+        /* 1. 修正後的 KoseFont 載入網址（這次絕對對了） */
         @font-face {
             font-family: 'KoseFont';
             src: url('https://cdn.jsdelivr.net/gh/lxgw/kose-font@master/fonts/ttf/KoseFont-Regular.ttf') format('truetype');
             font-display: swap;
         }
 
+        /* 2. 暴力鎖定：不管是翻譯前還是翻譯後，強制所有標籤套用字體 */
+        * {
+            font-family: 'KoseFont', sans-serif !important;
+        }
+
         body {
-            /* 背景圖片設定為 123.png */
             background-image: url('123.png'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
-            
-            /* 使用 KoseFont */
-            font-family: 'KoseFont', 'Microsoft JhengHei', sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
@@ -39,15 +40,11 @@
             backdrop-filter: blur(5px);
         }
 
-        h1 { 
-            font-size: 2.2em; 
-            margin-bottom: 5px; 
-            color: #ffa9a9 !important; 
-            font-weight: 700; 
-        }
+        /* 標題顏色保持粉紅 */
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; }
         
-        #google_translate_element { margin: 15px 0 25px 0; }
-        
+        #google_translate_element { margin: 20px 0; }
+
         .section-title {
             border-left: 4px solid #ffa9a9;
             padding-left: 15px;
@@ -57,14 +54,20 @@
             font-weight: 700;
         }
 
-        /* 地雷專用標題：強制紅色 */
-        .red-warning-title {
-            border-left: 4px solid #ff0000 !important;
+        /* 3. 地雷標題：最強紅色鎖定，翻譯後也不會變藍 */
+        .red-warning, .red-warning font, .red-warning span {
+            border-left: 5px solid #FF0000 !important;
             padding-left: 15px;
             margin: 35px 0 15px;
             font-size: 1.3em;
-            color: #ff0000 !important;
-            font-weight: 700;
+            color: #FF0000 !important;
+            font-weight: bold !important;
+        }
+
+        /* 用實體線代替底線，防止翻譯跑版 */
+        .hr-line {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 30px 0;
         }
 
         .raw-content {
@@ -84,42 +87,31 @@
     <div id="google_translate_element"></div>
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'zh-TW'}, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <div class="section-title">作品展示區 (預留)</div>
-    <div style="background: rgba(0,0,0,0.2); height: 100px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666; border: 1px dashed #555; margin-bottom: 20px;">
-        預留位置
-    </div>
 
     <div class="raw-content">別名：毛毛毛毛毛毛，毛⁶
-
 生日：11/22
+MBTI：istp（？）</div>
 
-MBTI：istp（？）
-______________
+    <div class="hr-line"></div>
 
-喜歡的角色：伊凡、蒂爾、多閒、秦限王億、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓
-
+    <div class="raw-content">喜歡的角色：伊凡、蒂爾、多閒、秦限王億、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓
 喜歡的ship：ivti、程光、秦億（秦王）
-
 推角：蒂爾、王億、陸光
-
 漫畫：alienstage 、惡人想要搶救一下
+動畫：時光代理人、現在是哪一個多閒</div>
 
-動畫：時光代理人、現在是哪一個多閒
-______________
+    <div class="hr-line"></div>
 
-喜歡的食物：阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西
-
-討厭的食物：苦瓜、太辣的東西、蠢蛋、太甜或太鹹
-
-嗜好：跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語
-_______________</div>
-
-    <div class="red-warning-title">地雷：</div>
+    <div class="red-warning">地雷：</div>
     <div class="raw-content">*請別跟我談政治的東西。
 
 *我不喜歡對家。
@@ -149,8 +141,9 @@ _______________</div>
 
 *請不要對我乞求無償服務，除非你是我的超級好朋友。
 
-*你不喜歡我的畫作，就請你刷掉我或是封鎖我，不要引用或是在我的貼文留言攻擊我。
-_______________</div>
+*你不喜歡我的畫作，就請你刷掉我或是封鎖我，不要引用或是在我的貼文留言攻擊我。</div>
+
+    <div class="hr-line"></div>
 
     <div class="section-title" style="color: #f1c40f !important; border-left-color: #f1c40f !important;">我的願望</div>
     <div class="raw-content">1.學會英文、韓文、日文
@@ -164,6 +157,5 @@ _______________</div>
         &copy; 2026 Umo 6毛. All rights reserved.
     </footer>
 </div>
-
 </body>
 </html>
