@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 引入瀨戶字體 */
+        /* 載入內海字體 (NaikaiFont) */
         @font-face {
-            font-family: 'SetoFont';
-            src: url('https://cdn.jsdelivr.net/gh/naen-631/font@main/SetoFont.woff2') format('woff2'),
-                 url('https://cdn.jsdelivr.net/gh/naen-631/font@main/SetoFont.ttf') format('truetype');
-            font-display: swap;
+            font-family: 'NaikaiFont';
+            src: url('https://cdn.jsdelivr.net/gh/googlefonts/nanum-gothic@main/fonts/ttf/NanumGothic-Regular.ttf'); /* 備援載入 */
+            src: url('https://cdn.jsdelivr.net/gh/justfont/naikaifont@master/NaikaiFont-Regular.ttf');
         }
 
         body {
-            background-image: url('123.png'); 
+            background-image: url('bg.png'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
-            font-family: 'SetoFont', 'Microsoft JhengHei', sans-serif !important;
+            /* 指定內海字體 */
+            font-family: 'NaikaiFont', 'SetoFont', 'Microsoft JhengHei', sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
@@ -37,14 +37,28 @@
             backdrop-filter: blur(5px);
         }
 
+        /* 名字標題顏色保持 #ffa9a9 */
         h1 { font-size: 2.2em; margin-bottom: 5px; color: #ffa9a9 !important; font-weight: 700; }
+        
         #google_translate_element { margin: 15px 0 25px 0; }
+        
+        /* 一般小節標題 */
         .section-title {
             border-left: 4px solid #ffa9a9;
             padding-left: 15px;
             margin: 35px 0 15px;
             font-size: 1.3em;
             color: #ffa9a9 !important;
+            font-weight: 700;
+        }
+
+        /* 地雷標題改紅色 */
+        .warning-title {
+            border-left: 4px solid #ff0000;
+            padding-left: 15px;
+            margin: 35px 0 15px;
+            font-size: 1.3em;
+            color: #ff0000 !important;
             font-weight: 700;
         }
 
@@ -71,7 +85,7 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <div class="section-title">作品展示區 (預留)</div>
-    <p style="color: #666;">（上傳圖片至 GitHub 後即可在此顯示）</p>
+    <p style="color: #666; font-size: 0.8em;">（作品圖片請命名為作品檔名並上傳至 GitHub）</p>
 
     <div class="raw-content">別名：毛毛毛毛毛毛，毛⁶
 
@@ -98,7 +112,7 @@ ______________
 嗜好：跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語
 _______________</div>
 
-    <div class="section-title">地雷：</div>
+    <div class="warning-title">地雷：</div>
     <div class="raw-content">*請別跟我談政治的東西。
 
 *我不喜歡對家。
@@ -143,5 +157,6 @@ _______________</div>
         &copy; 2026 Umo 6毛. All rights reserved.
     </footer>
 </div>
+
 </body>
 </html>
