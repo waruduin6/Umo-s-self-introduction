@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
-    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 引入瀨戶字體雲端版 */
+        /* 引入瀨戶字體 */
         @font-face {
             font-family: 'SetoFont';
-            src: url('https://cdn.jsdelivr.net/gh/Convert-Font/SetoFont@master/SetoFont.ttf');
+            src: url('https://cdn.jsdelivr.net/gh/naen-631/font@main/SetoFont.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/naen-631/font@main/SetoFont.ttf') format('truetype');
+            font-display: swap;
         }
 
         body {
-            /* 背景圖片設定，請確保 GitHub 上有一張叫 bg.png 的圖 */
             background-image: url('123.png'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
-            
-            /* 字體強制設定為瀨戶字體 */
-            font-family: 'SetoFont', 'Zhi Mang Xing', 'Noto Sans TC', sans-serif !important;
+            font-family: 'SetoFont', 'Microsoft JhengHei', sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
@@ -32,23 +30,15 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(45, 45, 45, 0.85); 
+            background: rgba(45, 45, 45, 0.9); 
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px); /* 背景模糊，讓字更好看 */
+            backdrop-filter: blur(5px);
         }
 
-        /* 標題顏色指定為 #ffa9a9 */
-        h1 { 
-            font-size: 2.2em; 
-            margin-bottom: 5px; 
-            color: #ffa9a9 !important; 
-            font-weight: 700; 
-        }
-
+        h1 { font-size: 2.2em; margin-bottom: 5px; color: #ffa9a9 !important; font-weight: 700; }
         #google_translate_element { margin: 15px 0 25px 0; }
-
         .section-title {
             border-left: 4px solid #ffa9a9;
             padding-left: 15px;
@@ -58,36 +48,13 @@
             font-weight: 700;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .gallery-item {
-            aspect-ratio: 1/1;
-            background: rgba(61, 61, 61, 0.5);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            border: 1px dashed #777;
-            font-size: 0.9em;
-        }
-
-        /* 關鍵：保持原稿排版、空格與換行 */
         .raw-content {
             white-space: pre-wrap;
             word-wrap: break-word;
             margin-bottom: 25px;
-            font-size: 1.05em;
         }
 
-        .hr-line { border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
-
-        footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; border-top: 1px solid #444; padding-top: 20px; }
+        footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -104,12 +71,7 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <div class="section-title">作品展示區 (預留)</div>
-    <div class="gallery">
-        <div class="gallery-item">作品 1</div>
-        <div class="gallery-item">作品 2</div>
-        <div class="gallery-item">作品 3</div>
-        <div class="gallery-item">作品 4</div>
-    </div>
+    <p style="color: #666;">（上傳圖片至 GitHub 後即可在此顯示）</p>
 
     <div class="raw-content">別名：毛毛毛毛毛毛，毛⁶
 
@@ -160,7 +122,7 @@ _______________</div>
 *我不會拿AI的畫說是自己的。我全部的畫作都是自己創作，假設你質疑我，我會直接封鎖。
 （雖然有些地方可能有點像，但那只是我偷懶沒畫而已。）
 
-*請不要無根無據的指控、造謠我沒做過的事情，遇到這種人自也不多說，會直接封鎖，我就沒做這件事，不用解釋。
+*請不要無根無據的指控、造謠我沒做過的事情，遇到這種人我也不多說，會直接封鎖，我就沒做這件事，不用解釋。
 
 *請以友善的語氣和我說話，假設你直接一開始就使用責備的語氣和我說話，我會先罵你一口或直接封鎖。
 
@@ -181,6 +143,5 @@ _______________</div>
         &copy; 2026 Umo 6毛. All rights reserved.
     </footer>
 </div>
-
 </body>
 </html>
