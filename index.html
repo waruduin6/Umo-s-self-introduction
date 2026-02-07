@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 重新強制載入 KoseFont */
+        /* 載入 KoseFont (開源瀨戶字體) */
         @font-face {
             font-family: 'KoseFont';
             src: url('https://cdn.jsdelivr.net/gh/lxgw/kose-font@master/fonts/ttf/KoseFont-Regular.ttf') format('truetype');
             font-display: swap;
+        }
+
+        /* 關鍵：使用 * 鎖定所有元素，防止翻譯後字體跑掉 */
+        * {
+            font-family: 'KoseFont', 'Microsoft JhengHei', sans-serif !important;
         }
 
         body {
@@ -19,13 +24,11 @@
             background-position: center;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
-            
-            /* 強制指定字體 */
-            font-family: 'KoseFont', 'Microsoft JhengHei', sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
+            top: 0px !important;
         }
 
         .container {
@@ -38,10 +41,17 @@
             backdrop-filter: blur(5px);
         }
 
-        h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; font-family: 'KoseFont', sans-serif !important; }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; }
         
-        /* 翻譯工具：開放所有語言 */
+        /* 翻譯工具樣式 */
         #google_translate_element { margin: 20px 0; min-height: 40px; }
+        .goog-te-gadget-simple { 
+            background-color: rgba(255,255,255,0.1) !important; 
+            border: 1px solid #555 !important;
+            padding: 8px !important;
+            border-radius: 5px !important;
+        }
+        .goog-te-gadget-simple span { color: #fff !important; }
 
         .section-title {
             border-left: 4px solid #ffa9a9;
@@ -52,8 +62,8 @@
             font-weight: 700;
         }
 
-        /* 紅色地雷標題 */
-        .red-warning-title {
+        /* 地雷標題：強制紅色，且不受翻譯影響 */
+        .red-warning-title, .red-warning-title font {
             border-left: 4px solid #ff0000 !important;
             padding-left: 15px;
             margin: 35px 0 15px;
@@ -62,7 +72,7 @@
             font-weight: 700;
         }
 
-        /* 實體分隔線：不會被翻譯影響 */
+        /* 實體分隔線：解決翻譯後底線跑版問題 */
         .divider {
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             margin: 30px 0;
@@ -73,10 +83,12 @@
             white-space: pre-wrap;
             word-wrap: break-word;
             margin-bottom: 25px;
-            font-family: 'KoseFont', sans-serif !important;
         }
 
         footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; }
+        
+        /* 隱藏 Google 翻譯後頂部的醜橫幅 */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
     </style>
 </head>
 <body>
@@ -89,8 +101,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'zh-TW',
-                // 移除語言限制，恢復全世界語言
-                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         }
