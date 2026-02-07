@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 強制從 jsDelivr 載入內海字體 NaikaiFont */
+        /* 強制載入內海字體 */
         @font-face {
             font-family: 'NaikaiFont';
             src: url('https://cdn.jsdelivr.net/gh/max32002/naikaifont@master/webfont/NaikaiFont-Regular.woff2') format('woff2');
@@ -13,15 +13,16 @@
         }
 
         body {
-            background-image: url('bg.png'); 
+            /* 背景圖片檔名已改為 123.png */
+            background-image: url('123.png'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
             
-            /* 強制指定字體，並加入預備手寫字體 */
-            font-family: 'NaikaiFont', 'SetoFont', 'Microsoft JhengHei', cursive, sans-serif !important;
+            /* 全域強制字體 */
+            font-family: 'NaikaiFont', sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
@@ -38,18 +39,16 @@
             backdrop-filter: blur(5px);
         }
 
-        /* 頂部名字標題顏色 #ffa9a9 */
+        /* 名字顏色 #ffa9a9 */
         h1 { 
             font-size: 2.2em; 
             margin-bottom: 5px; 
             color: #ffa9a9 !important; 
             font-weight: 700; 
-            font-family: 'NaikaiFont', sans-serif !important;
         }
         
         #google_translate_element { margin: 15px 0 25px 0; }
         
-        /* 一般小節標題 (粉色) */
         .section-title {
             border-left: 4px solid #ffa9a9;
             padding-left: 15px;
@@ -59,7 +58,7 @@
             font-weight: 700;
         }
 
-        /* 地雷標題強制變紅 */
+        /* 地雷標題：強制紅色 #ff0000 */
         .red-title {
             border-left: 4px solid #ff0000 !important;
             padding-left: 15px;
