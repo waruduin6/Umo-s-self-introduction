@@ -6,18 +6,10 @@
     <title>6毛 / Umo 的個人主頁</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-bg: #1a1a1a;
-            --card-bg: #2d2d2d;
-            --text-main: #e0e0e0;
-            --accent-pink: #ffa9a9; /* 你指定的標題顏色 */
-            --warning-red: #ff5e5e;
-            --gold: #f1c40f;
-        }
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-main);
+            font-family: 'Noto Sans TC', -apple-system, sans-serif !important;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
@@ -25,35 +17,33 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--card-bg);
+            background: #2d2d2d;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
         
-        /* 名字標題顏色改為 #ffa9a9 */
-        h1 { font-size: 2.2em; margin-bottom: 5px; color: var(--accent-pink); font-weight: 700; }
+        /* 強制改顏色為 #ffa9a9 */
+        h1 { 
+            font-size: 2.2em; 
+            margin-bottom: 5px; 
+            color: #ffa9a9 !important; 
+            font-weight: 700; 
+        }
         
-        .alias { font-size: 1em; color: #aaa; margin-bottom: 5px; }
-        
-        /* 翻譯按鈕樣式 */
+        /* 翻譯按鈕 */
         #google_translate_element {
-            margin: 15px 0;
-            padding: 5px;
-            background: #3d3d3d;
-            display: inline-block;
-            border-radius: 5px;
+            margin: 10px 0 20px 0;
         }
 
-        .hr-line { border-bottom: 1px solid #444; margin: 25px 0; }
+        .alias { font-size: 1em; color: #aaa; margin-bottom: 5px; }
         
-        /* 小節標題顏色改為 #ffa9a9 */
         .section-title {
-            border-left: 4px solid var(--accent-pink);
+            border-left: 4px solid #ffa9a9;
             padding-left: 15px;
             margin: 30px 0 15px;
             font-size: 1.2em;
-            color: var(--accent-pink);
+            color: #ffa9a9 !important; /* 強制改顏色 */
             font-weight: 700;
         }
 
@@ -61,7 +51,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 10px;
-            margin: 10px 0 30px 0;
+            margin-bottom: 30px;
         }
         .gallery-item {
             aspect-ratio: 1/1;
@@ -74,14 +64,17 @@
             border: 1px dashed #555;
         }
 
+        .hr-line { border-bottom: 1px solid #444; margin: 25px 0; }
         .warning-section {
-            background: rgba(255, 169, 169, 0.03);
+            background: rgba(255, 169, 169, 0.05);
             border: 1px solid #444;
             padding: 20px;
             border-radius: 10px;
         }
         .warning-item { margin-bottom: 15px; border-bottom: 1px solid #3d3d3d; padding-bottom: 10px; }
-        .warning-item:last-child { border: none; }
+        
+        ol { padding-left: 20px; }
+        .gold-text { color: #f1c40f; }
 
         footer { text-align: center; margin-top: 50px; color: #666; font-size: 0.8em; }
     </style>
@@ -113,21 +106,17 @@
 
     <div class="hr-line"></div>
 
-    <div class="content-block">
-        <p><strong>喜歡的角色：</strong>伊凡、蒂爾、多閒、秦限王億、琇亞、朱赫、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓</p>
-        <p><strong>喜歡的ship：</strong>ivti、程光、秦億（秦王）</p>
-        <p><strong>推角：</strong>蒂爾、王億、陸光</p>
-        <p><strong>漫畫：</strong>alienstage 、你是我的全世界、惡人想要搶救一下</p>
-        <p><strong>動畫：</strong>時光代理人、現在是哪一個多閒</p>
-    </div>
+    <p><strong>喜歡的角色：</strong>伊凡、蒂爾、多閒、秦限王億、琇亞、朱赫、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓</p>
+    <p><strong>喜歡的ship：</strong>ivti、程光、秦億（秦王）</p>
+    <p><strong>推角：</strong>蒂爾、王億、陸光</p>
+    <p><strong>漫畫：</strong>alienstage 、你是我的全世界、惡人想要搶救一下</p>
+    <p><strong>動畫：</strong>時光代理人、現在是哪一個多閒</p>
 
     <div class="hr-line"></div>
 
-    <div class="content-block">
-        <p><strong>喜歡的食物：</strong>阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西</p>
-        <p><strong>討厭的食物：</strong>苦瓜、太辣的東西、蠢蛋、太甜或太鹹</p>
-        <p><strong>嗜好：</strong>跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語</p>
-    </div>
+    <p><strong>喜歡的食物：</strong>阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西</p>
+    <p><strong>討厭的食物：</strong>苦瓜、太辣的東西、蠢蛋、太甜或太鹹</p>
+    <p><strong>嗜好：</strong>跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語</p>
 
     <div class="hr-line"></div>
 
@@ -145,7 +134,7 @@
         <div class="warning-item">*你不喜歡我的畫作，就請你刷掉我或是封鎖我，不要引用或是在我的貼文留言攻擊我。</div>
     </div>
 
-    <div class="section-title" style="color: var(--gold);">我的願望</div>
+    <div class="section-title gold-text">我的願望</div>
     <ol>
         <li>學會英文、韓文、日文</li>
         <li>畫出美麗的車圖</li>
