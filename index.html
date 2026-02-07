@@ -6,12 +6,14 @@
     <title>6毛 / Umo 的個人主頁</title>
     <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* 引入瀨戶字體雲端版 */
         @font-face {
             font-family: 'SetoFont';
             src: url('https://cdn.jsdelivr.net/gh/Convert-Font/SetoFont@master/SetoFont.ttf');
         }
+
         body {
-            /* 背景圖片設定 */
+            /* 背景圖片設定，請確保 GitHub 上有一張叫 bg.png 的圖 */
             background-image: url('bg.png'); 
             background-size: cover;
             background-attachment: fixed;
@@ -19,13 +21,14 @@
             background-repeat: no-repeat;
             background-color: #1a1a1a;
             
-            /* 字體設定 */
+            /* 字體強制設定為瀨戶字體 */
             font-family: 'SetoFont', 'Zhi Mang Xing', 'Noto Sans TC', sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -33,47 +36,65 @@
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px); /* 背景模糊，讓字更好看 */
         }
-        h1 { font-size: 2.2em; margin-bottom: 5px; color: #ffa9a9 !important; font-weight: 700; }
-        #google_translate_element { margin: 10px 0 20px 0; }
+
+        /* 標題顏色指定為 #ffa9a9 */
+        h1 { 
+            font-size: 2.2em; 
+            margin-bottom: 5px; 
+            color: #ffa9a9 !important; 
+            font-weight: 700; 
+        }
+
+        #google_translate_element { margin: 15px 0 25px 0; }
+
         .section-title {
             border-left: 4px solid #ffa9a9;
             padding-left: 15px;
-            margin: 30px 0 15px;
-            font-size: 1.2em;
+            margin: 35px 0 15px;
+            font-size: 1.3em;
             color: #ffa9a9 !important;
             font-weight: 700;
         }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 30px;
         }
+
         .gallery-item {
             aspect-ratio: 1/1;
             background: rgba(61, 61, 61, 0.5);
-            border-radius: 5px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #888;
-            border: 1px dashed #555;
+            border: 1px dashed #777;
+            font-size: 0.9em;
         }
-        .pre-text {
-            white-space: pre-wrap; /* 保持原稿的換行與空格 */
+
+        /* 關鍵：保持原稿排版、空格與換行 */
+        .raw-content {
+            white-space: pre-wrap;
             word-wrap: break-word;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 1.05em;
         }
-        footer { text-align: center; margin-top: 50px; color: #999; font-size: 0.8em; }
+
+        .hr-line { border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+
+        footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; border-top: 1px solid #444; padding-top: 20px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>我是6毛，也可以叫我Umo</h1>
-    
+
     <div id="google_translate_element"></div>
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -90,7 +111,7 @@
         <div class="gallery-item">作品 4</div>
     </div>
 
-    <div class="pre-text">別名：毛毛毛毛毛毛，毛⁶
+    <div class="raw-content">別名：毛毛毛毛毛毛，毛⁶
 
 生日：11/22
 
@@ -116,7 +137,7 @@ ______________
 _______________</div>
 
     <div class="section-title">地雷：</div>
-    <div class="pre-text">*請別跟我談政治的東西。
+    <div class="raw-content">*請別跟我談政治的東西。
 
 *我不喜歡對家。
 請你刷掉我。
@@ -139,7 +160,7 @@ _______________</div>
 *我不會拿AI的畫說是自己的。我全部的畫作都是自己創作，假設你質疑我，我會直接封鎖。
 （雖然有些地方可能有點像，但那只是我偷懶沒畫而已。）
 
-*請不要無根無據的指控、造謠我沒做過的事情，遇到這種人我也不多說，會直接封鎖，我就沒做這件事，不用解釋。
+*請不要無根無據的指控、造謠我沒做過的事情，遇到這種人自也不多說，會直接封鎖，我就沒做這件事，不用解釋。
 
 *請以友善的語氣和我說話，假設你直接一開始就使用責備的語氣和我說話，我會先罵你一口或直接封鎖。
 
@@ -149,7 +170,7 @@ _______________</div>
 _______________</div>
 
     <div class="section-title" style="color: #f1c40f !important; border-left-color: #f1c40f;">我的願望</div>
-    <div class="pre-text">1.學會英文、韓文、日文
+    <div class="raw-content">1.學會英文、韓文、日文
 2.畫出美麗的車圖
 3.做出一個一分鐘以上的動畫
 4.做出完整的小說
