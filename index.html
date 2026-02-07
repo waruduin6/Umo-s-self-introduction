@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 載入 KoseFont */
+        /* 重新強制載入 KoseFont */
         @font-face {
             font-family: 'KoseFont';
             src: url('https://cdn.jsdelivr.net/gh/lxgw/kose-font@master/fonts/ttf/KoseFont-Regular.ttf') format('truetype');
@@ -19,6 +19,8 @@
             background-position: center;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
+            
+            /* 強制指定字體 */
             font-family: 'KoseFont', 'Microsoft JhengHei', sans-serif !important;
             color: #e0e0e0;
             line-height: 1.8;
@@ -36,11 +38,10 @@
             backdrop-filter: blur(5px);
         }
 
-        h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; font-family: 'KoseFont', sans-serif !important; }
         
-        /* 翻譯工具樣式優化 */
-        #google_translate_element { margin: 20px 0; }
-        .goog-te-gadget-simple { border-radius: 5px !important; padding: 5px !important; }
+        /* 翻譯工具：開放所有語言 */
+        #google_translate_element { margin: 20px 0; min-height: 40px; }
 
         .section-title {
             border-left: 4px solid #ffa9a9;
@@ -61,7 +62,7 @@
             font-weight: 700;
         }
 
-        /* 實體分隔線：解決翻譯跑版問題 */
+        /* 實體分隔線：不會被翻譯影響 */
         .divider {
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             margin: 30px 0;
@@ -72,13 +73,10 @@
             white-space: pre-wrap;
             word-wrap: break-word;
             margin-bottom: 25px;
+            font-family: 'KoseFont', sans-serif !important;
         }
 
         footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; }
-        
-        /* 隱藏翻譯後上方的橫幅(選配，讓介面乾淨一點) */
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        body { top: 0px !important; }
     </style>
 </head>
 <body>
@@ -91,9 +89,9 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'zh-TW',
-                includedLanguages: 'en,ja,ko,zh-CN,zh-TW', // 限制常見語言，避免清單太長
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: true
+                // 移除語言限制，恢復全世界語言
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                autoDisplay: false
             }, 'google_translate_element');
         }
     </script>
@@ -108,7 +106,9 @@
 生日：11/22
 MBTI：istp（？）</div>
 
-    <div class="divider"></div> <div class="raw-content">喜歡的角色：伊凡、蒂爾、多閒、秦限王億、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓
+    <div class="divider"></div>
+
+    <div class="raw-content">喜歡的角色：伊凡、蒂爾、多閒、秦限王億、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓
 喜歡的ship：ivti、程光、秦億（秦王）
 推角：蒂爾、王億、陸光
 漫畫：alienstage 、惡人想要搶救一下
