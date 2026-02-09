@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 加速字體載入 */
+        /* 1. 字體：使用最穩定的 jsDelivr 節點 */
         @font-face {
             font-family: 'KoseFont';
             src: url('https://cdn.jsdelivr.net/gh/lxgw/kose-font@master/fonts/ttf/KoseFont-Regular.ttf') format('truetype');
             font-display: swap;
         }
 
+        /* 2. 全域暴力鎖定 (含翻譯後文字) */
         * {
             font-family: 'KoseFont', sans-serif !important;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            /* 背景圖片加速 */
             background-image: url('123.png'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            background-repeat: no-repeat;
             background-color: #1a1a1a;
             color: #e0e0e0;
             line-height: 1.8;
@@ -38,58 +39,35 @@
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px); /* 稍微加深模糊，背景圖跑得快但視覺不亂 */
         }
 
-        h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; }
-
-        /* 翻譯工具：小巧原文顯示版 */
-        #google_translate_element { 
-            margin: 10px 0; 
-            min-height: 26px;
-        }
-        .goog-te-gadget-simple {
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            border: 1px solid #777 !important;
-            padding: 5px 10px !important;
-            border-radius: 20px !important;
-            font-size: 13px !important;
-        }
-        .goog-te-gadget-simple img { display: none !important; } /* 隱藏Google圖示 */
-        .goog-te-gadget-simple span { color: #eee !important; vertical-align: middle !important; }
+        /* 3. 翻譯視窗「小巧化」與「原文顯示」修整 */
+        #google_translate_element { margin: 10px 0; height: 35px; overflow: hidden; }
         
-        /* 隱藏翻譯橫幅 */
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        body { top: 0px !important; }
-
-        .section-title {
-            border-left: 4px solid #ffa9a9;
-            padding-left: 15px;
-            margin: 35px 0 15px;
-            font-size: 1.3em;
-            color: #ffa9a9 !important;
-            font-weight: 700;
+        .goog-te-gadget-simple {
+            background-color: rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid #ffa9a9 !important;
+            padding: 5px 10px !important;
+            border-radius: 5px !important;
+            font-size: 14px !important;
         }
-
-        .red-warning, .red-warning font, .red-warning span {
-            border-left: 5px solid #FF0000 !important;
-            padding-left: 15px;
-            margin: 35px 0 15px;
-            font-size: 1.3em;
-            color: #FF0000 !important;
-            font-weight: bold !important;
+        
+        /* 隱藏 Google 圖示與多餘文字 */
+        .goog-te-gadget-icon, .goog-te-menu-value span:nth-child(3), .goog-te-menu-value span:nth-child(5) {
+            display: none !important;
         }
+        .goog-te-menu-value span { color: #ffa9a9 !important; }
 
-        .hr-line {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin: 30px 0;
-        }
+        /* 防止選單彈出後殘留 */
+        .goog-te-menu-frame { box-shadow: none !important; border: 1px solid #444 !important; }
 
-        .raw-content {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            margin-bottom: 25px;
-        }
+        /* 標題與地雷樣式 */
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; }
+        .section-title { border-left: 4px solid #ffa9a9; padding-left: 15px; margin: 35px 0 15px; color: #ffa9a9 !important; font-weight: 700; }
+        .red-warning { border-left: 5px solid #FF0000 !important; padding-left: 15px; margin: 35px 0 15px; color: #FF0000 !important; font-weight: bold !important; }
+        .hr-line { border-top: 1px solid rgba(255, 255, 255, 0.2); margin: 30px 0; }
+        .raw-content { white-space: pre-wrap; word-wrap: break-word; margin-bottom: 25px; }
 
         footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; }
     </style>
@@ -127,12 +105,6 @@ MBTI：istp（？）</div>
 
     <div class="hr-line"></div>
 
-    <div class="raw-content">喜歡的食物：阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西
-討厭的食物：苦瓜、太辣的東西、蠢蛋、太甜或太鹹
-嗜好：跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語</div>
-
-    <div class="hr-line"></div>
-
     <div class="red-warning">地雷：</div>
     <div class="raw-content">*我不是戀童癖。
 
@@ -167,19 +139,10 @@ MBTI：istp（？）</div>
 
 *你不喜歡我的畫作，就請你刷掉我或是封鎖我，不要引用或是在我的貼文留言攻擊我。</div>
 
-    <div class="hr-line"></div>
-
-    <div class="section-title" style="color: #f1c40f !important; border-left-color: #f1c40f !important;">我的願望</div>
-    <div class="raw-content">1.學會英文、韓文、日文
-2.畫出美麗的車圖
-3.做出一個一分鐘以上的動畫
-4.做出完整的小說
-5.做出想要的軟體
-6.每天洗澡</div>
-
     <footer>
         &copy; 2026 Umo 6毛. All rights reserved.
     </footer>
 </div>
+
 </body>
 </html>
