@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 1. 修正後的 KoseFont 載入網址（這次絕對對了） */
+        /* 載入 KoseFont */
         @font-face {
             font-family: 'KoseFont';
             src: url('https://cdn.jsdelivr.net/gh/lxgw/kose-font@master/fonts/ttf/KoseFont-Regular.ttf') format('truetype');
             font-display: swap;
         }
 
-        /* 2. 暴力鎖定：不管是翻譯前還是翻譯後，強制所有標籤套用字體 */
+        /* 全域強制字體鎖定 */
         * {
             font-family: 'KoseFont', sans-serif !important;
         }
@@ -28,6 +28,7 @@
             line-height: 1.8;
             margin: 0;
             padding: 20px;
+            top: 0px !important;
         }
 
         .container {
@@ -40,10 +41,24 @@
             backdrop-filter: blur(5px);
         }
 
-        /* 標題顏色保持粉紅 */
         h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; }
-        
-        #google_translate_element { margin: 20px 0; }
+
+        /* 翻譯工具：小巧化與美化 */
+        #google_translate_element { 
+            margin: 10px 0; 
+            display: inline-block;
+        }
+        /* 縮小翻譯框尺寸 */
+        .goog-te-gadget {
+            font-size: 12px !important;
+        }
+        .goog-te-gadget-simple {
+            padding: 4px !important;
+            border-radius: 4px !important;
+            background: rgba(255,255,255,0.1) !important;
+            border: 1px solid #666 !important;
+        }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
 
         .section-title {
             border-left: 4px solid #ffa9a9;
@@ -54,7 +69,7 @@
             font-weight: 700;
         }
 
-        /* 3. 地雷標題：最強紅色鎖定，翻譯後也不會變藍 */
+        /* 地雷標題：絕對紅色鎖定 */
         .red-warning, .red-warning font, .red-warning span {
             border-left: 5px solid #FF0000 !important;
             padding-left: 15px;
@@ -64,7 +79,6 @@
             font-weight: bold !important;
         }
 
-        /* 用實體線代替底線，防止翻譯跑版 */
         .hr-line {
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             margin: 30px 0;
@@ -89,7 +103,8 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'zh-TW',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                layout: google.translate.TranslateElement.InlineLayout.VERTICAL,
+                autoDisplay: false 
             }, 'google_translate_element');
         }
     </script>
@@ -104,15 +119,23 @@ MBTI：istp（？）</div>
     <div class="hr-line"></div>
 
     <div class="raw-content">喜歡的角色：伊凡、蒂爾、多閒、秦限王億、凱蒂貓、兔兔（烏薩奇）、程小時、陸光、喬苓
-喜歡的ship：ivti、程光、秦億（秦王）
+喜歡的couple：ivti、程光、秦億（秦王）
 推角：蒂爾、王億、陸光
 漫畫：alienstage 、惡人想要搶救一下
-動畫：時光代理人、現在是哪一個多閒</div>
+動畫：時光代理人、現在是哪一個多聞君</div>
+
+    <div class="hr-line"></div>
+
+    <div class="raw-content">喜歡的食物：阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西
+討厭的食物：苦瓜、太辣的東西、蠢蛋、太甜或太鹹
+嗜好：跳奇怪的即興舞蹈，在自己的房間亂叫、自言自語</div>
 
     <div class="hr-line"></div>
 
     <div class="red-warning">地雷：</div>
-    <div class="raw-content">*請別跟我談政治的東西。
+    <div class="raw-content">*我不是戀童癖。
+
+*請別跟我談政治的東西。
 
 *我不喜歡對家。
 請你刷掉我。
