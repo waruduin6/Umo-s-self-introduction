@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 改用更現代、清晰的字體組合 */
+        /* 1. 更換為現代感強、閱讀舒適的字體組合 */
         * {
-            font-family: 'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif !important;
         }
 
         body {
@@ -17,60 +17,71 @@
             background-position: center;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
-            color: #e0e0e0;
-            line-height: 1.8;
+            color: #f0f0f0;
+            line-height: 1.7;
             margin: 0;
             padding: 20px;
             top: 0px !important;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            background: rgba(40, 40, 40, 0.9); 
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.6);
-            backdrop-filter: blur(10px);
+            background: rgba(35, 35, 35, 0.92); 
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            backdrop-filter: blur(12px);
         }
 
-        /* 翻譯按鈕樣式 */
-        .translate-box {
-            margin-bottom: 30px;
+        /* 自定義翻譯按鈕 */
+        .translate-nav {
+            margin-bottom: 35px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
+            justify-content: center;
         }
         .lang-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 169, 169, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 169, 169, 0.4);
             color: #ffa9a9;
-            padding: 6px 15px;
+            padding: 7px 18px;
             border-radius: 50px;
             cursor: pointer;
             font-size: 13px;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .lang-btn:hover { background: #ffa9a9; color: #1a1a1a; }
+        .lang-btn:hover { background: #ffa9a9; color: #1a1a1a; transform: translateY(-2px); }
 
-        h1 { font-size: 2.4em; margin-bottom: 20px; color: #ffa9a9 !important; text-align: center; letter-spacing: 2px; }
-        .section-title { border-left: 5px solid #ffa9a9; padding-left: 15px; margin: 40px 0 15px; color: #ffa9a9 !important; font-weight: bold; font-size: 1.4em; }
+        h1 { font-size: 2.6em; margin-bottom: 25px; color: #ffa9a9 !important; text-align: center; font-weight: 800; }
+        .section-title { border-left: 6px solid #ffa9a9; padding-left: 18px; margin: 45px 0 20px; color: #ffa9a9 !important; font-weight: 700; font-size: 1.5em; }
         
-        /* 地雷標題：修正為截圖中的亮紅色 */
-        .red-warning { border-left: 5px solid #FF3B30 !important; padding-left: 15px; margin: 40px 0 15px; color: #FF3B30 !important; font-weight: bold; font-size: 1.4em; }
+        /* 地雷標題 */
+        .red-warning { border-left: 6px solid #FF3B30 !important; padding-left: 18px; margin: 45px 0 20px; color: #FF3B30 !important; font-weight: 800; font-size: 1.5em; }
         
-        .hr-line { border-top: 1px solid rgba(255, 255, 255, 0.15); margin: 30px 0; }
-
-        /* 關鍵排版修正：確保每一條地雷或段落翻譯後都不會擠在一起 */
-        .paragraph {
-            display: block; /* 強制換行 */
-            margin-bottom: 1.5em; /* 段落間距 */
-            word-wrap: break-word;
+        /* 實體間隔線：確保翻譯不跑位 */
+        .line-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin: 35px 0;
+            width: 100%;
         }
 
-        /* 防止翻譯標籤內建的行內樣式破壞排版 */
-        font, span {
-            line-height: inherit !important;
+        /* 內容間距修正：解決擠在一起的問題 */
+        .info-row {
+            display: block;
+            margin-bottom: 12px;
+            word-break: break-word;
+        }
+
+        /* 地雷清單：使用 Flex 確保每一條都是獨立區塊 */
+        .mine-item {
+            display: flex;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.03);
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-left: 3px solid rgba(255, 255, 255, 0.1);
         }
 
         #google_translate_element { display: none !important; }
@@ -79,9 +90,9 @@
 <body>
 
 <div class="container">
-    <h1>{ 自我介紹 }</h1>
+    <h1>自我介紹🍎🍀</h1>
 
-    <div class="translate-box">
+    <div class="translate-nav">
         <button class="lang-btn" onclick="doTranslate('zh-TW')">繁體中文</button>
         <button class="lang-btn" onclick="doTranslate('en')">English</button>
         <button class="lang-btn" onclick="doTranslate('ja')">日本語</button>
@@ -90,66 +101,55 @@
 
     <div id="google_translate_element"></div>
 
-    <div class="paragraph">
-        中文名：6毛<br>
-        English name：<span class="notranslate">Umo</span><br>
-        中文別名：毛毛毛毛毛毛、<span class="notranslate">毛⁶</span>
-    </div>
+    <div class="info-row">中文名：6毛</div>
+    <div class="info-row">English name：<span class="notranslate">Umo</span></div>
+    <div class="info-row">中文別名：毛毛毛毛毛毛、<span class="notranslate">毛⁶</span></div>
+    <div class="info-row" style="margin-top: 15px;">生日：11/22</div>
+    <div class="info-row">MBTI：istp（？）</div>
 
-    <div class="paragraph">
-        生日：11/22<br>
-        MBTI：istp（？）
-    </div>
+    <div class="line-divider"></div>
 
-    <div class="hr-line"></div>
+    <div class="section-title">喜歡的角色與作品</div>
+    <div class="info-row">喜歡的角色：伊凡、蒂爾（<span class="notranslate">Till</span>）、多聞、秦限、王億、凱蒂貓、兔兔（<span class="notranslate">Usagi</span>）、程小時、陸光、喬苓</div>
+    <div class="info-row">喜歡的couple：ivti、程光、秦億（秦王）</div>
+    <div class="info-row">推角：蒂爾、王億、陸光</div>
+    <div class="info-row">漫畫：alienstage 、惡人想要搶救一下</div>
+    <div class="info-row">動畫：時光代理人（<span class="notranslate">Link Click</span>）、現在是哪一個多聞！？（<span class="notranslate">多聞くん今どっち!?</span>）</div>
 
-    <div class="section-title">作品與推角</div>
-    <div class="paragraph">
-        喜歡的角色：伊凡、蒂爾、多聞、秦限、王億、凱蒂貓、兔兔（<span class="notranslate">Usagi</span>）、程小時、陸光、喬苓<br>
-        喜歡的couple：ivti、程光、秦億（秦王）<br>
-        推角：蒂爾、王億、陸光<br>
-        漫畫：alienstage 、惡人想要搶救一下<br>
-        動畫：時光代理人（<span class="notranslate">Link Click</span>）、現在是哪一個多聞（<span class="notranslate">多聞くん今どっち!?</span>）
-    </div>
+    <div class="line-divider"></div>
 
-    <div class="hr-line"></div>
+    <div class="section-title">生活偏好</div>
+    <div class="info-row">喜歡的食物：阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西🫑🍎🍓</div>
+    <div class="info-row">討厭的食物：苦瓜、太辣的東西、太甜或太鹹</div>
+    <div class="info-row">嗜好：跳奇怪的即興舞蹈💃（青椒舞）、在自己的房間亂叫🐒、自言自語</div>
 
-    <div class="section-title">生活愛好</div>
-    <div class="paragraph">
-        喜歡的食物：阿嬤炒的青椒、紅蘋果、草莓、酸甜適口的東西<br>
-        討厭的食物：苦瓜、太辣的東西、蠢蛋、太甜或太鹹<br>
-        嗜好：跳奇怪的即興舞蹈（青椒舞）、在自己的房間亂叫、自言自語
-    </div>
+    <div class="line-divider"></div>
 
-    <div class="hr-line"></div>
+    <div class="red-warning">地雷和聲明💣：</div>
+    <div class="mine-item"><span>*請別跟我談政治的東西。</span></div>
+    <div class="mine-item"><span>*我不是戀童癖。</span></div>
+    <div class="mine-item"><span>*我不喜歡對家。請你刷掉我。例如：tiiv、光時（白黑）</span></div>
+    <div class="mine-item"><span>*雖然我的畫沒那麼好看，但請不要轉載和抄襲。基本上各個社群媒體我都有，我自己就可以發圖，不需要別人。但是你可以拿我的圖去剪片。我會很開心，記得要@我。</span></div>
+    <div class="mine-item"><span>*不要對我人身攻擊。</span></div>
+    <div class="mine-item"><span>*我永遠都不是種族歧視者。我愛任何膚色、善良的帥哥美女。-膚色會因為環境光的不同而有差異。</span></div>
+    <div class="mine-item"><span>*我的心理承受能力出奇的差，特別容易破防，所以假設你覺得我的畫很奇怪，請你建議我如何修改。合理的話，我會好好聽從意見，請不要罵我。</span></div>
+    <div class="mine-item"><span>*我不會拿AI的畫說是自己的。我全部的畫作都是自己創作，假設你質疑我，我會直接封鎖。（雖然有些地方可能有點像，那只是我偷懶沒畫而已。）</span></div>
+    <div class="mine-item"><span>*請不要無根無據的指控、造謠我沒做過的事情，遇到這種人我會直接封鎖，不需要解釋。</span></div>
+    <div class="mine-item"><span>*請以友善的語氣和我說話，假設你一開始就使用責備的語氣和我說話，我會先罵你一口或直接封鎖。</span></div>
+    <div class="mine-item"><span>*請不要對我乞求無償服務，除非你是我的超級好朋友。</span></div>
+    <div class="mine-item"><span>*你不喜歡我的畫作，就請你刷掉我或是封鎖我，不要引用或是留言攻擊我。</span></div>
 
-    <div class="red-warning">地雷：</div>
-    <div class="paragraph">*請別跟我談政治的東西。</div>
-    <div class="paragraph">*我不是戀童癖。</div>
-    <div class="paragraph">*我不喜歡對家。請你刷掉我。例如：tiiv、光時（白黑）</div>
-    <div class="paragraph">*雖然我的畫沒那麼好看，但請不要轉載和抄襲，我看到了我會砲轟你。基本上各個社群媒體我都有，我自己就可以發圖，不需要別人。但是你可以拿我的圖去剪片。我會很開心，記得要@我。</div>
-    <div class="paragraph">*不要對我人身攻擊。</div>
-    <div class="paragraph">*我永遠都不是種族歧視者。我愛任何膚色、善良的帥哥美女。-膚色會因為環境光的不同而有差異。</div>
-    <div class="paragraph">*我的心理承受能力出奇的差，特別容易破防，所以假設你覺得我的畫很奇怪，請你建議我如何修改。合理的話，我會好好聽從意見，請不要罵我。</div>
-    <div class="paragraph">*我不會拿AI的畫說是自己的。我全部的畫作都是自己創作，假設你質疑我，我會直接封鎖。</div>
-    <div class="paragraph">*請不要無根無據的指控、造謠我沒做過的事情，遇到這種人我也不多說，會直接封鎖。</div>
-    <div class="paragraph">*請以友善的語氣和我說話，假設你一開始就使用責備的語氣跟我說話，我會直接封鎖。</div>
-    <div class="paragraph">*請不要對我乞求無償服務，除非你是我的超級好朋友。</div>
-    <div class="paragraph">*你不喜歡我的畫作，就請你刷掉我或是封鎖我，不要引用或是留言攻擊。</div>
+    <div class="line-divider"></div>
 
-    <div class="hr-line"></div>
+    <div class="section-title" style="color: #f1c40f !important; border-left-color: #f1c40f !important;">我的願望🌟</div>
+    <div class="info-row">1. 學會英文、韓文、日文等</div>
+    <div class="info-row">2. 畫出美麗的****圖(⁠☆⁠▽⁠☆⁠)</div>
+    <div class="info-row">3. 做出一個一分鐘以上的動畫</div>
+    <div class="info-row">4. 做出完整的漫畫</div>
+    <div class="info-row">5. 做出想要的軟體</div>
+    <div class="info-row">6. 每天洗澡</div>
 
-    <div class="section-title" style="color: #f1c40f !important; border-left-color: #f1c40f !important;">我的願望</div>
-    <div class="paragraph">
-        1. 學會英文、韓文、日文等<br>
-        2. 畫出美麗的車圖<br>
-        3. 做出一個一分鐘以上的動畫<br>
-        4. 做出完整的漫畫<br>
-        5. 做出想要的軟體<br>
-        6. 每天洗澡
-    </div>
-
-    <footer style="text-align: center; margin-top: 50px; color: #888; font-size: 0.8em; padding-bottom: 20px;">
+    <footer style="text-align: center; margin-top: 60px; color: #777; font-size: 0.85em;">
         &copy; 2026 <span class="notranslate">Umo</span> 6毛. All rights reserved.
     </footer>
 </div>
