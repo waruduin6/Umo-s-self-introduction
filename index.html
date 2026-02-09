@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6毛 / Umo 的個人主頁</title>
     <style>
-        /* 載入 KoseFont */
+        /* 加速字體載入 */
         @font-face {
             font-family: 'KoseFont';
             src: url('https://cdn.jsdelivr.net/gh/lxgw/kose-font@master/fonts/ttf/KoseFont-Regular.ttf') format('truetype');
             font-display: swap;
         }
 
-        /* 全域強制字體鎖定 */
         * {
             font-family: 'KoseFont', sans-serif !important;
         }
 
         body {
+            /* 背景圖片加速 */
             background-image: url('123.png'); 
             background-size: cover;
             background-attachment: fixed;
@@ -43,22 +43,24 @@
 
         h1 { font-size: 2.2em; margin-bottom: 10px; color: #ffa9a9 !important; }
 
-        /* 翻譯工具：小巧化與美化 */
+        /* 翻譯工具：小巧原文顯示版 */
         #google_translate_element { 
             margin: 10px 0; 
-            display: inline-block;
-        }
-        /* 縮小翻譯框尺寸 */
-        .goog-te-gadget {
-            font-size: 12px !important;
+            min-height: 26px;
         }
         .goog-te-gadget-simple {
-            padding: 4px !important;
-            border-radius: 4px !important;
-            background: rgba(255,255,255,0.1) !important;
-            border: 1px solid #666 !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid #777 !important;
+            padding: 5px 10px !important;
+            border-radius: 20px !important;
+            font-size: 13px !important;
         }
+        .goog-te-gadget-simple img { display: none !important; } /* 隱藏Google圖示 */
+        .goog-te-gadget-simple span { color: #eee !important; vertical-align: middle !important; }
+        
+        /* 隱藏翻譯橫幅 */
         .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
 
         .section-title {
             border-left: 4px solid #ffa9a9;
@@ -69,7 +71,6 @@
             font-weight: 700;
         }
 
-        /* 地雷標題：絕對紅色鎖定 */
         .red-warning, .red-warning font, .red-warning span {
             border-left: 5px solid #FF0000 !important;
             padding-left: 15px;
@@ -103,8 +104,8 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'zh-TW',
-                layout: google.translate.TranslateElement.InlineLayout.VERTICAL,
-                autoDisplay: false 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
             }, 'google_translate_element');
         }
     </script>
